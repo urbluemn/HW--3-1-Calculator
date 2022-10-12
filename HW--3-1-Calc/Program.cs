@@ -8,3 +8,72 @@
 //8)  Дополнительно:
 //•  возможность вводить пример в одну строку
 //•  в несколько действий.
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.CompilerServices;
+
+Console.WriteLine("\t\t\t\t\tWelcome to \"Epic-Calc 2000\"");
+Console.WriteLine();
+Console.WriteLine("Enter values and action and I'll make the math for you!");
+double firstNum;
+double secondNum;
+double sum;
+string action;
+bool isInputValid = false;
+Console.WriteLine("First value..");
+while (!isInputValid)
+{
+    try
+    {
+        firstNum = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine($"{firstNum} ... ");
+    }
+    catch (Exception)
+    {
+        Console.WriteLine("Entered wrong number!");
+        continue;
+    }
+    isInputValid = true;
+}
+isInputValid = false;
+Console.WriteLine("Second value..");
+while (!isInputValid)
+{
+    try
+    {
+        secondNum = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine($"Value B: {secondNum}");
+    }
+    catch (Exception)
+    {
+        Console.WriteLine("Entered wrong number!");
+        continue;
+    }
+    isInputValid = true;
+}
+isInputValid = false;
+Console.WriteLine("Action..");
+while (!isInputValid) //ошибка здесь
+{
+    action = Console.ReadLine();
+    switch (action)
+    {
+        case "+":
+            sum = firstNum + secondNum;
+            Console.WriteLine("Say smth");
+            break;
+        case "-":
+            break;
+        case "/":
+            break;
+        case "*":
+            break;
+        default:
+            Console.WriteLine("Entered wrong action!");
+            continue;
+    }
+
+    isInputValid = true;
+}
+
+
+
