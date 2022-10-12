@@ -8,8 +8,7 @@
 //8)  Дополнительно:
 //•  возможность вводить пример в одну строку
 //•  в несколько действий.
-using System.Reflection.Metadata.Ecma335;
-using System.Runtime.CompilerServices;
+
 
 Console.WriteLine("\t\t\t\t\tWelcome to \"Epic-Calc 2000\"");
 Console.WriteLine();
@@ -22,33 +21,55 @@ bool isInputValid = false;
 Console.WriteLine("First value..");
 while (!isInputValid)
 {
-    try
+    bool result = double.TryParse(Console.ReadLine(), out firstNum);
+    if (result)
     {
-        firstNum = Convert.ToDouble(Console.ReadLine());
         Console.WriteLine($"{firstNum} ... ");
+        isInputValid = true;
     }
-    catch (Exception)
+    else
     {
-        Console.WriteLine("Entered wrong number!");
+        Console.WriteLine("Wrong input!");
         continue;
     }
-    isInputValid = true;
+    //try
+    //{
+    //    firstNum = Convert.ToDouble(Console.ReadLine());
+    //    Console.WriteLine($"{firstNum} ... ");
+    //}
+    //catch (Exception)
+    //{
+    //    Console.WriteLine("Entered wrong number!");
+    //    continue;
+    //}
+    //isInputValid = true;
 }
 isInputValid = false;
 Console.WriteLine("Second value..");
 while (!isInputValid)
 {
-    try
+    bool result = double.TryParse(Console.ReadLine(), out secondNum);
+    if (result)
     {
-        secondNum = Convert.ToDouble(Console.ReadLine());
-        Console.WriteLine($"Value B: {secondNum}");
+        Console.WriteLine($"{secondNum} ... ");
+        isInputValid = true;
     }
-    catch (Exception)
+    else
     {
-        Console.WriteLine("Entered wrong number!");
+        Console.WriteLine("Wrong input!");
         continue;
     }
-    isInputValid = true;
+    //try
+    //{
+    //    secondNum = Convert.ToDouble(Console.ReadLine());
+    //    Console.WriteLine($"Value B: {secondNum}");
+    //}
+    //catch (Exception)
+    //{
+    //    Console.WriteLine("Entered wrong number!");
+    //    continue;
+    //}
+    //isInputValid = true;
 }
 isInputValid = false;
 Console.WriteLine("Action..");
