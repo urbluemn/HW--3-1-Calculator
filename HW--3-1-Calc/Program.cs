@@ -172,7 +172,7 @@ while (!repeatCalc)
         if (userInput != null && userInput == "Y" || userInput == "y")
         {
 
-            Console.WriteLine("Select option: \n1. Restart. \n2. Repeat last action. \n3. Show history(Last 5 answers).");
+            Console.WriteLine("Select option: \n1. Restart. \n2. Repeat last action. \n3. Show history(Last 5 answers). \n4. Quit.");
             //user chose
             int userChose = int.Parse(Console.ReadLine());
             switch (userChose)
@@ -192,6 +192,10 @@ while (!repeatCalc)
                 case 3:
                     HistoryView();
                     continue;
+                case 4:
+                    repeatMenu = true;
+                    repeatCalc = true;
+                    break;
                 default:
                     Console.WriteLine("No such case in menu, please try once more.");
                     continue;
