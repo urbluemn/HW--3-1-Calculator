@@ -52,7 +52,7 @@ double EnterValue()//Entering values
     if (!resultOfParse)
     {
         Console.WriteLine("<!>Wrong input, try again<!>");
-        EnterValue();
+        returningValue = EnterValue();
     }
     return returningValue;
 }
